@@ -120,9 +120,9 @@ export default function Cardo() {
         </div>
       </div>
 
-      <div className='flex items-center h-10'>
+      <div className='flex items-center rounded-md overflow-hidden'>
         <button
-          className='flex items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600'
+          className='flex items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600 h-12'
           title={plattform == 'other'? 'Go to releases page': 'Download latest release for ' + plattform}
           onClick={() => {
             open(releases[plattform])
@@ -141,7 +141,7 @@ export default function Cardo() {
         </button>
         {
           plattform != 'other' &&
-          <button className='flex bg-purple-900 hover:bg-purple-800'
+          <button className='flex items-center bg-purple-900 hover:bg-purple-800 h-12'
           title='Go to releases page'
           onClick={() => open(releases.other)}
           >
