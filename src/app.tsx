@@ -1,6 +1,7 @@
-import Router, { Route, route } from "preact-router";
+import Router, { CustomHistory, Route, route } from "preact-router";
 import Cardo from "./pages/Cardo";
 import { useEffect } from "preact/hooks";
+import { createHashHistory } from 'history';
 
 
 function Redirect(to: string) {
@@ -24,7 +25,7 @@ export function App() {
           />
         </a>
       </div>
-      <Router>
+      <Router history={createHashHistory() as unknown as CustomHistory}>
         <Route path='/' component={() => Redirect('/cardo')} />
         <Route path='/cardo' component={Cardo} />
       </Router>
