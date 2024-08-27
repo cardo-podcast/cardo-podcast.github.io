@@ -15,7 +15,7 @@ export function App() {
     <div className='w-full h-screen bg-zinc-900 pt-10 font-sans overflow-y-auto scroll-smooth'>
       <div className='absolute top-0 w-full h-12 bg-zinc-950 flex justify-end px-3 py-1'>
         <a href='https://github.com/n0vella' target='_blank'
-        className=' contents'
+          className=' contents'
         >
           <img
             className='rounded-full hover:mix-blend-plus-lighter'
@@ -28,6 +28,8 @@ export function App() {
         <Route path='/' component={() => Redirect('/cardo')} />
         <Route path='/cardo' component={Cardo} />
       </Router>
+      <div className='w-full h-12 bg-zinc-950 flex justify-end px-3 py-1 mt-10'>
+      </div>
     </div >
   )
 }
