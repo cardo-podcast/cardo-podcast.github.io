@@ -62,7 +62,7 @@ export default function Cardo() {
           src="https://raw.githubusercontent.com/n0vella/cardo/master/src-tauri/icons/icon.png"
           onClick={() => open('https://github.com/n0vella/cardo/')}
         />
-        <h1 className='text-2xl md:text-4xl lg:text-5xl text-nowrap'>Cardo podcast player</h1>
+        <h1 className='text-2xl md:text-4xl lg:text-5xl text-nowrap'>Cardo podcast client</h1>
 
       </div>
       <div className='group relative w-5/6 lg:w-2/5'>

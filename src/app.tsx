@@ -20,7 +20,7 @@ export function App() {
 
           <div className='bg-yellow-400 items-center rounded-md py-1 px-2 flex group-hover:hidden'>
             <span className='w-8'>{icons.tipJar}</span>
-            <p className='font-medium'>¿DO YOU LIKE THIS?</p>
+            <p className='font-medium'>DO YOU LIKE THIS?</p>
           </div>
 
           <div className='gap-1 hidden group-hover:flex'>
