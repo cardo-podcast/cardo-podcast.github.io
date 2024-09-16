@@ -6,10 +6,11 @@ import img1 from '../assets/1.png'
 import img2 from '../assets/2.png'
 import img3 from '../assets/3.png'
 import img4 from '../assets/4.png'
+import img5 from '../assets/5.png'
 
 
 export default function Cardo() {
-  let images = [img1, img2, img3, img4]
+  let images = [img1, img2, img3, img4, img5]
   const [index, setIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
   const [releases, setReleases] = useState({ Windows: '', Mac: '', other: 'https://github.com/cardo-podcast/cardo/releases/latest/' })
