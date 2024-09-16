@@ -12,7 +12,7 @@ export default function Cardo() {
   let images = [img1, img2, img3, img4]
   const [index, setIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
-  const [releases, setReleases] = useState({ Windows: '', Mac: '', other: 'https://github.com/n0vella/cardo/releases/latest/' })
+  const [releases, setReleases] = useState({ Windows: '', Mac: '', other: 'https://github.com/cardo-podcast/cardo/releases/latest/' })
   const [plattform, setPlattform] = useState<keyof typeof releases>('other')
 
   const getLatestsRelease = async () => {
@@ -20,7 +20,7 @@ export default function Cardo() {
       auth: import.meta.env.VITE_GITHUB_API_TOKEN
     })
 
-    const r = await octokit.request('GET /repos/n0vella/cardo/releases/latest', {
+    const r = await octokit.request('GET /repos/cardo-podcast/cardo/releases/latest', {
       owner: 'OWNER',
       repo: 'REPO',
       headers: {
@@ -59,8 +59,8 @@ export default function Cardo() {
         <img
           className='w-16 cursor-pointer hover:p-1'
           title='Open Github Repo'
-          src="https://raw.githubusercontent.com/n0vella/cardo/master/src-tauri/icons/icon.png"
-          onClick={() => open('https://github.com/n0vella/cardo/')}
+          src="https://raw.githubusercontent.com/cardo-podcast/cardo/master/src-tauri/icons/icon.png"
+          onClick={() => open('https://github.com/cardo-podcast/cardo/')}
         />
         <h1 className='text-2xl md:text-4xl lg:text-5xl text-nowrap'>Cardo podcast client</h1>
 
