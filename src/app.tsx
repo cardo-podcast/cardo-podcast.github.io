@@ -36,8 +36,8 @@ export function App() {
           />
         </a>
       </div>
-      <Cardo />
-      <div className='w-full h-12 bg-zinc-950 flex justify-end px-3 py-1 mt-10'>
+      <div className='flex justify-center items-start w-full h-full'>
+        <Cardo />
       </div>
     </div >
   )

@@ -55,15 +55,52 @@ export default function Cardo() {
   }, []);
 
   return (
-    <div className='w-full text-zinc-100 flex flex-col items-center pt-6 gap-8'>
+    <div className='w-full text-zinc-100 flex justify-evenly items-center flex-col 
+    lg:flex-row pt-6 lg:pt-10 h-full
+    bg-gradient-to-t lg:bg-gradient-to-l from from-purple-950 to-70% to-zinc-900
+    '>
+
       <div className='flex flex-col items-center gap-1'>
         <img
-          className='w-16 cursor-pointer hover:p-1'
+          className='w-20 cursor-pointer hover:p-1'
           title='Open Github Repo'
           src="https://raw.githubusercontent.com/cardo-podcast/cardo/master/src-tauri/icons/icon.png"
           onClick={() => open('https://github.com/cardo-podcast/cardo/')}
         />
-        <h1 className='text-2xl md:text-4xl lg:text-5xl text-nowrap'>Cardo podcast client</h1>
+        <h1 className='text-2xl md:text-4xl lg:text-5xl text-nowrap mb-2 lg:mb-5'>Cardo podcast client</h1>
+
+        {/* DOWNLOADS */}
+        <div className='flex items-center rounded-md overflow-hidden'>
+          <button
+            className='flex items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600 h-12'
+            title={plattform == 'other' ? 'Go to releases page' : 'Download latest release for ' + plattform}
+            onClick={() => {
+              open(releases[plattform])
+            }}
+          >
+            <span className='w-10 p-1'>
+              {
+                plattform == 'Windows' ?
+                  icons.windows :
+                  plattform == 'Mac' ?
+                    icons.apple :
+                    icons.github
+              }
+            </span>
+            <p className='text-lg'>DOWNLOAD</p>
+          </button>
+          {
+            plattform != 'other' &&
+            <button className='flex items-center bg-purple-900 hover:bg-purple-800 h-12'
+              title='Go to releases page'
+              onClick={() => open(releases.other)}
+            >
+              <span className='w-10 p-1'>
+                {icons.github}
+              </span>
+            </button>
+          }
+        </div>
 
       </div>
       <div className='group relative w-5/6 lg:w-2/5'>
@@ -108,7 +145,7 @@ export default function Cardo() {
           }
         </div>
 
-        <div className='absolute flex opacity-0 group-hover:opacity-100 bottom-0 mb-3 left-1/2 -translate-x-1/2 gap-3'>
+        <div className='absolute flex opacity-0 group-hover:opacity-100 bottom-0 left-1/2 -translate-x-1/2 gap-3'>
           {
             images.map((_, i) => (
               <div className={`border-1 border-purple-900 w-[10px] h-[10px] rounded-full
@@ -119,38 +156,6 @@ export default function Cardo() {
             ))
           }
         </div>
-      </div>
-
-      <div className='flex items-center rounded-md overflow-hidden'>
-        <button
-          className='flex items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600 h-12'
-          title={plattform == 'other'? 'Go to releases page': 'Download latest release for ' + plattform}
-          onClick={() => {
-            open(releases[plattform])
-          }}
-        >
-          <span className='w-10 p-1'>
-            {
-              plattform == 'Windows' ?
-                icons.windows :
-                plattform == 'Mac' ?
-                  icons.apple :
-                  icons.github
-            }
-          </span>
-          <p className='text-lg'>DOWNLOAD</p>
-        </button>
-        {
-          plattform != 'other' &&
-          <button className='flex items-center bg-purple-900 hover:bg-purple-800 h-12'
-          title='Go to releases page'
-          onClick={() => open(releases.other)}
-          >
-            <span className='w-10 p-1'>
-              {icons.github}
-            </span>
-          </button>
-        }
       </div>
 
     </div>
