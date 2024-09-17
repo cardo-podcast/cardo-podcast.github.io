@@ -5,7 +5,7 @@ import * as icons from './Icons'
 export function App() {
 
   return (
-    <div className='w-full h-screen bg-zinc-900 pt-10 font-sans overflow-y-auto scroll-smooth'>
+    <div className='w-full h-full bg-zinc-900 pt-10 font-sans overflow-y-auto scroll-smooth'>
       <div className='absolute top-0 w-full h-12 bg-zinc-950 flex justify-between px-3 py-1'>
         <div className='relative group'>
 
@@ -36,7 +36,7 @@ export function App() {
           />
         </a>
       </div>
-      <div className='flex justify-center items-start w-full h-full'>
+      <div className='fixed flex justify-center items-start w-full h-full top-12'>
         <Cardo />
       </div>
     </div >

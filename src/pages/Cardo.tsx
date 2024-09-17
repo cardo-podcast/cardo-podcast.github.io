@@ -55,8 +55,8 @@ export default function Cardo() {
   }, []);
 
   return (
-    <div className='w-full text-zinc-100 flex justify-evenly items-center flex-col 
-    lg:flex-row pt-6 lg:pt-10 h-full
+    <div className='w-full text-zinc-100 flex items-center flex-col 
+    lg:flex-row gap-6 lg:justify-evenly h-full pt-2 overflow-auto
     bg-gradient-to-t lg:bg-gradient-to-l from from-purple-950 to-70% to-zinc-900
     '>
 
