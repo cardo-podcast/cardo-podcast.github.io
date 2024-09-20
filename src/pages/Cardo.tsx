@@ -13,7 +13,7 @@ export default function Cardo() {
   let images = [img1, img2, img3, img4, img5]
   const [index, setIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
-  const [releases, setReleases] = useState({ Windows: '', Mac: '', other: 'https://github.com/cardo-podcast/cardo/releases/latest/' })
+  const [releases, setReleases] = useState({ Windows: '', Mac: { x64: '', aarch64: '' }, other: 'https://github.com/cardo-podcast/cardo/releases/latest/' })
   const [plattform, setPlattform] = useState<keyof typeof releases>('other')
 
   const getLatestsRelease = async () => {
@@ -34,8 +34,10 @@ export default function Cardo() {
     for (const release of r.data.assets) {
       if (release.name.endsWith('.msi')) {
         newReleases.Windows = release.browser_download_url
-      } else if (release.name.endsWith('.dmg')) {
-        newReleases.Mac = release.browser_download_url
+      } else if (release.name.endsWith('aarch64.dmg')) {
+        newReleases.Mac.aarch64 = release.browser_download_url
+      } else if (release.name.endsWith('x64.dmg')) {
+        newReleases.Mac.x64 = release.browser_download_url
       }
     }
 
@@ -70,36 +72,63 @@ export default function Cardo() {
         <h1 className='text-2xl md:text-4xl lg:text-5xl text-nowrap mb-2 lg:mb-5'>Cardo podcast client</h1>
 
         {/* DOWNLOADS */}
-        <div className='flex items-center rounded-md overflow-hidden'>
-          <button
-            className='flex items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600 h-12'
-            title={plattform == 'other' ? 'Go to releases page' : 'Download latest release for ' + plattform}
-            onClick={() => {
-              open(releases[plattform])
-            }}
-          >
-            <span className='w-10 p-1'>
-              {
-                plattform == 'Windows' ?
-                  icons.windows :
-                  plattform == 'Mac' ?
-                    icons.apple :
-                    icons.github
-              }
-            </span>
-            <p className='text-lg'>DOWNLOAD</p>
-          </button>
+        <div className='flex gap-4'>
+
           {
-            plattform != 'other' &&
-            <button className='flex items-center bg-purple-900 hover:bg-purple-800 h-12'
-              title='Go to releases page'
-              onClick={() => open(releases.other)}
+            plattform == 'Mac' ?
+              <>
+                <button
+                  className='flex w-48 rounded-md items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600 h-12'
+                  onClick={() => {
+                    open(releases['Mac']['x64'])
+                  }}
+                >
+                  <span className='w-10 p-1 shrink-0'>
+                    {icons.apple}
+                  </span>
+                  <p>DOWNLOAD FOR INTEL</p>
+                </button>
+
+                <button
+                  className='flex w-48 rounded-md items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600 h-12'
+                  onClick={() => {
+                    open(releases['Mac']['aarch64'])
+                  }}
+                >
+                  <span className='w-10 p-1 shrink-0'>
+                    {icons.apple}
+                  </span>
+                  <p>DOWNLOAD FOR APPLE SILICON</p>
+                </button>
+              </>
+
+              : plattform == 'Windows' &&
+              <button
+                className='flex w-48 rounded-md items-center gap-1 bg-purple-700 pr-2 hover:bg-purple-600 h-12'
+                onClick={() => {
+                  open(releases['Windows'])
+                }}
+              >
+                <span className='w-10 p-1 shrink-0'>
+                  {icons.windows}
+                </span>
+                <p>DOWNLOAD FOR WINDOWS</p>
+              </button>
+          }
+
+
+            <button
+              className='flex w-48 rounded-md items-center gap-1 bg-purple-900 pr-2 hover:bg-purple-800 h-12'
+              onClick={() => {
+                open(releases['other'])
+              }}
             >
-              <span className='w-10 p-1'>
+              <span className='w-10 p-1 shrink-0'>
                 {icons.github}
               </span>
+              <p>GO TO RELEASES PAGE</p>
             </button>
-          }
+
         </div>
 
       </div>
@@ -107,7 +136,8 @@ export default function Cardo() {
 
         <div className='opacity-0 group-hover:opacity-100 transition-opacity absolute w-full top-1/2 -translate-y-1/2 flex justify-between h-1/2'>
           <button
-            className="bg-purple-500 w-1/12 rounded-r-full opacity-60 hover:opacity-90 transition-opacity"
+            className={`bg-purple-500 w-5 rounded-r-full text-transparent
+                hover:w-1/12 hover:text-white transition-all ${index > 0 ? 'opacity-20 hover:opacity-90' : 'opacity-0'}`}
             onClick={() => {
               if (scrollRef.current) {
                 scrollRef.current.scrollLeft -= scrollRef.current.scrollWidth / images.length
@@ -119,7 +149,8 @@ export default function Cardo() {
           </button>
 
           <button
-            className="bg-purple-500 w-1/12 rounded-l-full opacity-60 hover:opacity-90 transition-opacity duration-200"
+            className={`bg-purple-500 w-5 rounded-l-full text-transparent
+              hover:w-1/12 hover:text-white transition-all ${index < images.length - 1 ? 'opacity-20 hover:opacity-90' : 'opacity-0'}`}
             onClick={() => {
               if (scrollRef.current) {
                 scrollRef.current.scrollLeft += scrollRef.current.scrollWidth / images.length
