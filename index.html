@@ -2,14 +2,116 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/177157984" /> -->
     <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/177157984" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>n0vella</title>
-    <script type="module" crossorigin src="/assets/index-CXFt4uGs.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-iSao1n99.css">
+    <title>Cardo</title>
+    <link rel="stylesheet" crossorigin href="/assets/index-Kw9qYRKV.css">
   </head>
+  <!-- <script type="module" src="src/index.ts"></script> -->
   <body>
-    <div id="app"></div>
+    <div class="h-full w-full scroll-smooth bg-zinc-900 pt-10 text-zinc-200">
+      <div id="header" class="absolute top-0 flex h-12 w-full items-center justify-between bg-zinc-950 px-3 py-1">
+        <div id="donate" class="flex h-10 animate-[fadeIn_1s_ease-in_forwards] gap-1">
+          <a href="https://www.buymeacoffee.com/n0vella" target="_blank">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" class="h-10" />
+          </a>
+          <a href="https://www.paypal.com/paypalme/adriannovella" target="_blank">
+            <img src="https://www.paypalobjects.com/webstatic/icon/pp196.png" alt="Paypal" class="h-10 rounded-md" />
+          </a>
+        </div>
+        <a href="https://github.com/cardo-podcast/cardo" target="_blank">
+          <div class="cursor-pointer">
+            <img alt="Repo" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3csvg%20width='24'%20height='24'%20viewBox='0%200%2048%2048'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Layer_2'%20data-name='Layer%202'%3e%3cg%20id='invisible_box'%20data-name='invisible%20box'%3e%3crect%20width='48'%20height='48'%20fill='none'/%3e%3crect%20width='48'%20height='48'%20fill='none'/%3e%3c/g%3e%3cg%20id='icons_Q2'%20data-name='icons%20Q2'%3e%3cpath%20d='M24,1.9a21.6,21.6,0,0,0-6.8,42.2c1,.2,1.8-.9,1.8-1.8V39.4c-6,1.3-7.9-2.9-7.9-2.9a6.5,6.5,0,0,0-2.2-3.2C6.9,31.9,9,32,9,32a4.3,4.3,0,0,1,3.3,2c1.7,2.9,5.5,2.6,6.7,2.1a5.4,5.4,0,0,1,.5-2.9C12.7,32,9,28,9,22.6A10.7,10.7,0,0,1,11.9,15a6.2,6.2,0,0,1,.3-6.4,8.9,8.9,0,0,1,6.4,2.9,15.1,15.1,0,0,1,5.4-.8,17.1,17.1,0,0,1,5.4.7,9,9,0,0,1,6.4-2.8,6.5,6.5,0,0,1,.4,6.4A10.7,10.7,0,0,1,39,22.6C39,28,35.3,32,28.5,33.2a5.4,5.4,0,0,1,.5,2.9v6.2a1.8,1.8,0,0,0,1.9,1.8A21.7,21.7,0,0,0,24,1.9Z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" class="aspect-square w-10 shrink-0 cursor-pointer rounded-full bg-white" />
+          </div>
+        </a>
+      </div>
+
+      <div class="from fixed top-12 flex h-full w-full items-start justify-center overflow-y-auto scroll-smooth bg-zinc-900 pb-80 pt-10">
+        <div class="flex flex-col items-center gap-14">
+          <div class="flex flex-col items-center gap-4">
+            <h1 class="mb-2 flex gap-2 text-nowrap text-6xl font-light lg:mb-5">
+              <span class="flex items-end bg-gradient-to-b from-purple-950 via-purple-600 to-purple-950 bg-clip-text text-transparent">
+                Card
+                <object alt="o" data="public/cardo.svg" type="image/svg+xml" class="-mb-1 h-14 shrink-0 whitespace-pre"></object>
+              </span>
+              podcast client
+            </h1>
+
+            <ul class="flex animate-[fadeIn_2s_ease-in_forwards] flex-col gap-1 text-2xl font-light">
+              <li>Listen to your podcasts 🎙️ on desktop 💻</li>
+              <li>Lightweight 🪶, fast ⚡, carefully designed</li>
+              <li class="flex items-end gap-2">
+                Synchronice your podcasts using
+                <img alt="nextcloud" class="-mb-0.5 h-7 shrink-0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/141px-Nextcloud_Logo.svg.png" />
+                or
+                <img alt="gpodder" class="-mb-0.5 h-7 shrink-0" src="https://gpodder.net/static/gpoddernet_228.png" />
+              </li>
+              <li>Open source, made with ♥️ by <span class="text-purple-500">n0vella</span></li>
+            </ul>
+          </div>
+
+          <div class="flex gap-8">
+            <a href="#downloads" class="flex h-12 w-48 items-center justify-center gap-1 rounded-md border-2 border-purple-900 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+              <span class="text-xl">DOWNLOAD</span>
+            </a>
+          </div>
+
+          <div id="screenshots" class="flex w-2/3 animate-[fadeInUp_2s_ease-in_forwards] flex-col gap-12">
+            <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="/assets/1-DuaXlMpf.png" />
+            <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="/assets/2-kiqolmfa.png" />
+            <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="/assets/3-CXMU2Qok.png" />
+            <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="/assets/4-ChKhW6zv.png" />
+            <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="/assets/5-sAmXbGbH.png" />
+          </div>
+
+          <div class="mt-10 flex flex-col items-center gap-6">
+            <h2 class="text-3xl font-light">DOWNLOADS</h2>
+
+            <div id="downloads" class="flex gap-10">
+              <div class="flex flex-col gap-4">
+                <a id="msi" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+                  <img alt="Windows" src="https://www.microsoft.com/favicon.ico?v2" class="w-6" />
+                  <span class="text-xl">MSI</span>
+                </a>
+                <a id="exe" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+                  <img alt="Windows" src="https://www.microsoft.com/favicon.ico?v2" class="w-6" />
+                  <span class="text-xl">EXE</span>
+                </a>
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <a id="x64_dmg" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+                  <svg class="w-6 fill-white stroke-none" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z"></path>
+                  </svg>
+                  <span class="text-xl">SILICON</span>
+                </a>
+                <a id="aarch64_dmg" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+                  <svg class="w-6 fill-white stroke-none" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z"></path>
+                  </svg>
+                  <span class="text-xl">INTEL</span>
+                </a>
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <a id="appimage" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+                  <img src="/assets/tux-BNquVqvG.png" class="w-6 shrink-0 text-white stroke-red-500 fill-green-400"></object>
+                  <span class="text-xl">AppImage</span>
+                </a>
+                <a id="deb" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+                  <img src="/assets/tux-BNquVqvG.png" class="w-6 shrink-0 text-white stroke-red-500 fill-green-400"></object>
+                  <span class="text-xl">DEB</span>
+                </a>
+                <a id="rpm" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
+                  <img src="/assets/tux-BNquVqvG.png" class="w-6 shrink-0 text-white stroke-red-500 fill-green-400"></object>
+                  <span class="text-xl">RPM</span>
+                </a>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
