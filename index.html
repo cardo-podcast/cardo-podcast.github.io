@@ -26,37 +26,37 @@
         </a>
       </div>
 
-      <div class="from fixed top-12 flex h-full w-full items-start justify-center overflow-y-auto scroll-smooth bg-zinc-900 pb-80 pt-10">
+      <div class="fixed top-12 flex h-full w-full items-start justify-center overflow-y-auto overflow-x-clip px-6 scroll-smooth bg-zinc-900 pb-80 pt-10">
         <div class="flex flex-col items-center gap-14">
           <div class="flex flex-col items-center gap-4">
-            <h1 class="mb-2 flex gap-2 text-nowrap text-6xl font-light lg:mb-5">
-              <span class="flex items-end bg-gradient-to-b from-purple-950 via-purple-600 to-purple-950 bg-clip-text text-transparent">
+            <h1 class="mb-2 flex gap-2 text-nowrap text-4xl md:text-6xl font-light lg:mb-5">
+              <span class="inline-flex items-center bg-gradient-to-b from-purple-950 via-purple-600 to-purple-950 bg-clip-text text-transparent">
                 Card
-                <object alt="o" data="public/cardo.svg" type="image/svg+xml" class="-mb-1 h-14 shrink-0 whitespace-pre"></object>
+                <img alt="o" src="public/cardo.svg" class="h-[1em] shrink-0 md:-mb-1"></img>
               </span>
               podcast client
             </h1>
 
-            <ul class="flex animate-[fadeIn_2s_ease-in_forwards] flex-col gap-1 text-2xl font-light">
+            <ul class="flex flex-col animate-[fadeIn_2s_ease-in_forwards] gap-1 md:text-2xl font-light">
               <li>Listen to your podcasts 🎙️ on desktop 💻</li>
-              <li>Lightweight 🪶, fast ⚡, carefully designed</li>
-              <li class="flex items-end gap-2">
-                Synchronice your podcasts using
-                <img alt="nextcloud" class="-mb-0.5 h-7 shrink-0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/141px-Nextcloud_Logo.svg.png" />
+              <li>Lightweight 🪶, fast ⚡</li>
+              <li class="flex items-center gap-2">
+                Sync using
+                <img alt="nextcloud" class="-mb-0.5 h-[1em] shrink-0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/141px-Nextcloud_Logo.svg.png" />
                 or
-                <img alt="gpodder" class="-mb-0.5 h-7 shrink-0" src="https://gpodder.net/static/gpoddernet_228.png" />
+                <img alt="gpodder" class="-mb-0.5 h-[1em] shrink-0" src="https://gpodder.net/static/gpoddernet_228.png" />
               </li>
               <li>Open source, made with ♥️ by <span class="text-purple-500">n0vella</span></li>
             </ul>
           </div>
 
-          <div class="flex gap-8">
+          <div class="flex gap-8 animate-[fadeIn_2s_ease-in_forwards]">
             <a href="#downloads" class="flex h-12 w-48 items-center justify-center gap-1 rounded-md border-2 border-purple-900 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
               <span class="text-xl">DOWNLOAD</span>
             </a>
           </div>
 
-          <div id="screenshots" class="flex w-2/3 animate-[fadeInUp_2s_ease-in_forwards] flex-col gap-12">
+          <div id="screenshots" class="flex w-full lg:w-2/3 animate-[fadeInUp_2s_ease-in_forwards] flex-col gap-12">
             <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="./src/assets/1.png" />
             <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="./src/assets/2.png" />
             <img class="shrink-0 snap-center snap-always rounded-md border border-zinc-800 shadow-md shadow-zinc-800" src="./src/assets/3.png" />
@@ -67,7 +67,7 @@
           <div class="mt-10 flex flex-col items-center gap-6">
             <h2 class="text-3xl font-light">DOWNLOADS</h2>
 
-            <div id="downloads" class="flex gap-10">
+            <div id="downloads" class="flex flex-col md:flex-row gap-10">
               <div class="flex flex-col gap-4">
                 <a id="msi" class="flex h-12 w-48 items-center justify-center gap-2 rounded-md border-2 border-purple-950 bg-purple-950 pr-2 shadow shadow-zinc-800 duration-200 ease-in hover:scale-105 hover:bg-purple-900">
                   <img alt="Windows" src="https://www.microsoft.com/favicon.ico?v2" class="w-6" />
