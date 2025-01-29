@@ -1,1 +1,0 @@
-import"./index-D3V37XeL.js";function d(){const t=document.querySelectorAll(".flip");for(const e of t)e.addEventListener("mouseover",()=>setTimeout(()=>e.classList.add("flipped"),1)),e.addEventListener("mouseleave",()=>e.classList.remove("flipped"))}document.addEventListener("DOMContentLoaded",d);
